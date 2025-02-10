@@ -5,10 +5,14 @@
     
     - Creare il file index.php che creai un array di oggetti Alunno ed esegua la stampa dei singoli elementi.
     */
-    class Alunno {
+    class Alunno implements JsonSerializable{
         private $nome;
         private $cognome;
         private $eta;
+
+        public function jsonSerialize(): array {
+            return ["nome" => $this->nome, "cognome" => $this->cognome, "eta" => $this->eta];
+        }
 
         public function __construct($nome, $cognome, $eta) {
             $this->nome = $nome;
