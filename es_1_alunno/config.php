@@ -1,0 +1,3 @@
+<?php
+
+    $subdir = ["models", "includes"];
